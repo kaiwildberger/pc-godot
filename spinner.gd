@@ -19,9 +19,9 @@ func map(value, leftMin, leftMax, rightMin, rightMax) -> float:
 	return rightMin + (value_scaled * rightRange)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not event.is_action_pressed("mousepress"):
+	if event.is_action_released("mousepress"):
 		spinning = false
-	if event is InputEventMouseButton and event.is_action_pressed("mousepress"):
+	if event.is_action_pressed("mousepress"):
 		spinning = true
 
 # todo: probably angle from value? is ez cos map backwards pretty much methinks
