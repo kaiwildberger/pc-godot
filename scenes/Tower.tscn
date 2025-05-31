@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo4sp5vepku01"]
+
+[ext_resource type="Script" uid="uid://brrtioipgifir" path="res://scripts/tower.gd" id="1_kl3vk"]
+[ext_resource type="Texture2D" uid="uid://bsvfi2kw54xb2" path="res://knob.jpg" id="2_02lgm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlq62"]
+radius = 166.003
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_kl3vk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.13687e-13, 0)
+scale = Vector2(0.113497, 0.197051)
+texture = ExtResource("2_02lgm")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_jlq62")
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck4w7jos0mnq2"]
+
+[ext_resource type="Script" uid="uid://cei3n3vo4jw2j" path="res://scripts/table_1.gd" id="1_a6blb"]
+[ext_resource type="PackedScene" uid="uid://1fclx3ejwxmk" path="res://scenes/trash.tscn" id="2_sdq1l"]
+
+[sub_resource type="Curve2D" id="Curve2D_bjmf8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 247, 95, 0, 0, 0, 0, 246, 539, 0, 0, 0, 0, 938, 545)
+}
+point_count = 3
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_a6blb")
+
+[node name="Path" type="Path2D" parent="."]
+position = Vector2(-27, -27)
+curve = SubResource("Curve2D_bjmf8")
+
+[node name="Trash" parent="Path" instance=ExtResource("2_sdq1l")]
+position = Vector2(873, 585)

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8st7buge26m5"]
+
+[ext_resource type="Script" uid="uid://ciavjeiakhx6i" path="res://scripts/spinner.gd" id="1_ec7gc"]
+[ext_resource type="Script" uid="uid://4sk1rlgumbyn" path="res://scripts/radio_player.gd" id="1_s17bj"]
+
+[sub_resource type="Gradient" id="Gradient_l7vbo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.745, 0.85)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ec7gc"]
+gradient = SubResource("Gradient_l7vbo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.911585, 0.856707)
+
+[sub_resource type="Gradient" id="Gradient_ec7gc"]
+offsets = PackedFloat32Array(0, 0.89)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s17bj"]
+gradient = SubResource("Gradient_ec7gc")
+
+[node name="Parent" type="Node2D"]
+script = ExtResource("1_s17bj")
+
+[node name="Dial" type="Node2D" parent="."]
+rotation = 1.5708
+script = ExtResource("1_ec7gc")
+
+[node name="circle" type="Sprite2D" parent="Dial"]
+scale = Vector2(0.984375, 0.984375)
+texture = SubResource("GradientTexture2D_ec7gc")
+region_rect = Rect2(81.3767, 74.6257, 448.265, 447.837)
+
+[node name="pip" type="Sprite2D" parent="Dial"]
+position = Vector2(-19, 0)
+scale = Vector2(0.0428689, 1.53921)
+texture = SubResource("GradientTexture1D_s17bj")
+
+[node name="value label" type="RichTextLabel" parent="."]
+offset_left = -34.0
+offset_top = -49.0
+offset_right = 35.0
+offset_bottom = -27.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+horizontal_alignment = 1
+
+[node name="raw label" type="RichTextLabel" parent="."]
+offset_left = -75.0
+offset_top = 38.0
+offset_right = 76.0
+offset_bottom = 60.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
