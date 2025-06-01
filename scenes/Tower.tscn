@@ -1,22 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo4sp5vepku01"]
 
 [ext_resource type="Script" uid="uid://brrtioipgifir" path="res://scripts/tower.gd" id="1_kl3vk"]
-[ext_resource type="Texture2D" uid="uid://bsvfi2kw54xb2" path="res://knob.jpg" id="2_02lgm"]
+[ext_resource type="Texture2D" uid="uid://bt3kynpabkyeq" path="res://sprites/SushiTiles.png" id="2_kl3vk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlq62"]
-radius = 166.003
+radius = 138.058
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_kl3vk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.13687e-13, 0)
-scale = Vector2(0.113497, 0.197051)
-texture = ExtResource("2_02lgm")
+scale = Vector2(4, 4)
+texture = ExtResource("2_kl3vk")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 32)
+
+[node name="Cooldown label" type="RichTextLabel" parent="."]
+offset_left = -24.0
+offset_top = -100.0
+offset_right = 25.0
+offset_bottom = -73.0
+horizontal_alignment = 1
 
 [node name="Range" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_jlq62")
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]

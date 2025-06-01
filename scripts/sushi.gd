@@ -1,6 +1,7 @@
 extends PathFollow2D
 
 @export var speed = 400
+@export var eat_time = 1
 signal sushi_trashed # signals get defined on the component that has to Receive them
 signal sushi_eaten
 

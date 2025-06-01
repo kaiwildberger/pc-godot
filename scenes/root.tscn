@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1rtk6yskxx8t"]
 
 [ext_resource type="Script" uid="uid://bnd4rknpsbwc1" path="res://scripts/root.gd" id="1_pyidc"]
-[ext_resource type="PackedScene" uid="uid://ck4w7jos0mnq2" path="res://scenes/Table1.tscn" id="2_pyidc"]
+[ext_resource type="PackedScene" uid="uid://ck4w7jos0mnq2" path="res://scenes/Stage1.tscn" id="2_pyidc"]
 [ext_resource type="Script" uid="uid://drdygngqa6gq" path="res://scripts/trash_label.gd" id="3_vvh5c"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_pyidc")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(527, 326)
-offset = Vector2(48.99, 0)
-
 [node name="Table1" parent="." instance=ExtResource("2_pyidc")]
-position = Vector2(1, 0)
+position = Vector2(579, 324)
 
 [node name="trash_label" type="RichTextLabel" parent="."]
-offset_left = 582.0
-offset_top = 168.0
-offset_right = 672.0
-offset_bottom = 218.0
+offset_left = 744.0
+offset_top = 78.0
+offset_right = 1014.0
+offset_bottom = 153.0
 script = ExtResource("3_vvh5c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(917, 542)
+offset = Vector2(48.99, 0)
