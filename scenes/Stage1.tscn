@@ -20,12 +20,11 @@ sources/0 = SubResource("TileSetAtlasSource_5kubj")
 
 [sub_resource type="Curve2D" id="Curve2D_bjmf8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -345, -339.981, 0, 0, 0, 0, -318, 270.25, 0, 0, 0, 0, 60, 272.142, 0, 0, 0, 0, 58, 28.9956, 0, 0, 0, 0, 444, 28.0495, 0, 0, 0, 0, 445, 633.55, 0, 0, 0, 0, 828, 630.712, 0, 0, 0, 0, 830, 26.1573, 0, 0, 0, 0, 1797, 27.1034)
+"points": PackedVector2Array(0, 0, 0, 0, -325, -342.82, 0, 0, 0, 0, -324, 270.25, 0, 0, 0, 0, 60, 272.142, 0, 0, 0, 0, 58, 28.9956, 0, 0, 0, 0, 444, 28.0495, 0, 0, 0, 0, 445, 633.55, 0, 0, 0, 0, 828, 630.712, 0, 0, 0, 0, 830, 26.1573, 0, 0, 0, 0, 1797, 27.1034)
 }
 point_count = 9
 
 [node name="Table" type="Node2D"]
-position = Vector2(578, 325)
 script = ExtResource("1_a6blb")
 
 [node name="Base map" type="TileMapLayer" parent="."]
@@ -35,7 +34,7 @@ tile_set = SubResource("TileSet_mxm3m")
 
 [node name="Decoration map" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAKAAIAAAACAAAAAAAUAAkAAAADAAAAAAAEAAMAAAADAAEAAAD+/wEAAAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAUAAkAAAADAAAAAAD+/wEAAAAEAAAAAAADAAUAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_mxm3m")
 
 [node name="Path" type="Path2D" parent="."]

@@ -2,8 +2,9 @@ extends PathFollow2D
 
 @export var speed = 400
 @export var eat_time = 1
-signal sushi_trashed # signals get defined on the component that has to Receive them
-signal sushi_eaten
+@export var health = 10
+signal cts_trashed # signals get defined on the component that has to Receive them
+signal cts_killed
 
 func _process(delta: float) -> void:
 	self.progress += speed * delta
@@ -30,3 +31,9 @@ func _on_sushi_eaten() -> void:
 	#print("on sushi eaten!!")
 	Global.eaten += 1
 	self.queue_free()
+	
+func damage(val):
+	health -= val
+	if health >= 0:
+		# customer killed (points?)
+		queue_free()
